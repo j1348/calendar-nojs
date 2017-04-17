@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title></title>
+</head>
+<body>
+    <style>
+
+    .calendar-nojs {
+        display: inline-block;
+        font-family: sans-serif;
+        border: 1px solid gray;
+        padding: 0 1rem 1.5rem;
+    }
+
+    .calendar-nojs thead td {
+        font-weight: bold;
+        text-align: right;
+        padding-right: 0.6rem;
+    }
+
+    .calendar-nojs tbody td {
+        border: 2px solid transparent;
+        border-radius: 50%;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .calendar-nojs tbody td.previous-month,
+    .calendar-nojs tbody td.next-month {
+        color: #AAA;
+    }
+
+    .calendar-nojs h2 {
+        text-align: center;
+    }
+
+    .calendar-nojs .category1 {
+        border-bottom: 4px solid red;
+    }
+
+    .calendar-nojs .category2  {
+        border-bottom: 4px solid blue;
+    }
+
+    </style>
+    <!-- this is a test -->
+    <div class="calendar-nojs">
+        <h2><%= context.monthTitle %></h2>
+        <table>
+            <thead>
+                <tr>
+                    <% for(var i=context.firstDayOfWeek; i<(context.weekdays.length+context.firstDayOfWeek); i++) { %>
+                        <td><%= context.weekdays[i % 7] %></td>
+                    <% } %>
+                </tr>
+            </thead>
+            <tbody>
+            <% for(var i=0; i<context.nWeeks; i++) { %>
+                <tr>
+                    <% for(var j=0; j<7; j++) {
+                        var curDate = context.range.start;
+                        var curMonth = curDate.month();
+
+                        if (curMonth === context.month-1) { %>
+                            <td class="previous-month">
+                        <% } else if (curMonth === context.month+1) { %>
+                            <td class="next-month">
+                        <% } else {
+
+                            const selectedEvents = events.filter(function(e) {
+                                if (!e.date.diff(curDate, 'minutes')) {
+                                    return true;
+                                }
+                            }).map(function(e) {
+                                return e.type;
+                            });
+
+                            if (selectedEvents.length) { %>
+                                <td class="<%= selectedEvents.join('') %>">
+                            <% } else { %>
+                                <td>
+                            <% }
+                        } %><%= curDate.date() %></td>
+                        <% context.range.start.add(1, 'days');
+                    } %>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
