@@ -13,6 +13,7 @@ function getMonthDateRange(year, month) {
 exports.getMonthContext = function(year, nMonth) {
     const range = getMonthDateRange(year, nMonth);
     const monthTitle = range.start.format('MMMM YYYY');
+    const monthId = "m" + range.start.format('MM');
     const month = range.start.month();
 
     range.start = range.start.add(-range.start.weekday(), 'days');
@@ -30,6 +31,7 @@ exports.getMonthContext = function(year, nMonth) {
         weekdays,
         firstDayOfWeek,
         monthTitle,
+        monthId,
         month,
     };
 }
