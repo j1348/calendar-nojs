@@ -10,8 +10,10 @@
   "author": "jfroffice <me@jfroffice.me>",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^4.0.0",
     "ejs": "^2.5.6",
     "html-minifier": "^3.4.3",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "nodemailer": "^4.0.1"
   }
 }
