@@ -52,7 +52,7 @@
 			/*////// CONTENT STYLES //////*/
 			body, #bodyTable{background-color:#181818;}
 			h1{color:#FFFFFF !important; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:40px; font-weight:200; line-height:44px; margin-top:0; margin-right:0; margin-bottom:20px; margin-left:0; padding:0; text-align:center; text-shadow:0 2px 0 rgba(0, 0, 0, 0.25);}
-			h2{color:#181818 !important; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:30px; font-weight:200; line-height:34px; margin-top:0; margin-right:0; margin-bottom:20px; margin-left:0; padding:0; text-align:center;}
+			h2{color:#181818 !important; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:30px; font-weight:200; line-height:34px; margin-top:0; margin-right:0; margin-bottom:20px; margin-left:0; padding:0; text-align:left;}
 			#emailHeader{background-color:#494643; background-image:url(http://i.imgur.com/TwCooBr.png); background-position:center top; background-repeat:no-repeat; background-size:cover;}
 			.headerContent p{color:#FFFFFF !important; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:18px; font-weight:200; line-height:24px; margin-top:0; margin-right:0; margin-bottom:10px; margin-left:0; text-align:center; text-shadow:0 2px 0 rgba(0, 0, 0, 0.25);}
 
@@ -98,140 +98,6 @@
 				.sidebarContent p{font-size:22px !important; line-height:28px !important;}
 				.flexibleImage{max-width:320px;}
 			}
-
-            /*///// CUSTOM ////////*/
-
-             .eventButton{background-color:#00C5CC; border-top:5px solid #00C5CC; border-right:10px solid #00C5CC; border-bottom:5px solid #00C5CC; border-left:10px solid #00C5CC; border-radius:2px; color:#FFFFFF; display:inline-block; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:16px; font-weight:400; line-height:18px; text-align:center; text-decoration:none;}
-
-            .calendars {
-                overflow: hidden;
-            }
-
-            .calendars-inner {
-                width: 9999px;
-                transition: all 400ms;
-            }
-
-            .calendars-controls {
-                width: 100%;
-                margin: 0;
-                padding: 0;
-            }
-
-            .calendars-controls .inner {
-                margin: 1em auto;
-                width: 550px;
-            }
-
-            .calendars-controls label {
-                cursor: pointer;
-                border-radius: 50%;
-                display: inline-block;
-                width: 44px;
-                height: 44px;
-                background: #bbb;
-            }
-
-            .calendars-controls label:hover {
-                background: #ccc;
-                border-color: #777 !important;
-            }
-
-            .calendars-controls label:last-child {
-                margin-right: 0;
-            }
-
-
-            .calendar-detail {
-                margin-top: 20px;
-            }
-
-
-            .calendar-detail > div {
-                display: none;
-                padding: 0.1rem 2rem 2rem 2rem;
-                margin: 0 auto;
-                background-color: #FAFAFA;
-            }
-
-            .calendar-nojs {
-                /*display: inline-block;*/
-                font-family: sans-serif;
-                /*border-right: 1px solid #AAA;*/
-            }
-
-            .calendar-nojs thead {
-                line-height: 1.6rem;
-            }
-
-            .calendar-nojs thead td {
-                font-weight: bold;
-                text-align: right;
-                padding-right: 1rem;
-            }
-
-            .calendar-nojs tbody td {
-                border-radius: 50%;
-                text-align: center;
-                vertical-align: middle;
-            }
-
-            .calendar-nojs tbody td label {
-                width: 20px;
-                border-right: 5px solid transparent;
-                border-left: 5px solid transparent;
-            }
-
-            .calendar-nojs tbody td.previous-month,
-            .calendar-nojs tbody td.next-month {
-                color: #AAA;
-            }
-
-            .calendar-nojs h2 {
-                text-align: center;
-            }
-
-            .calendar-nojs .category1 {
-                border-bottom: 4px solid red;
-            }
-
-            .calendar-nojs .category2  {
-                border-bottom: 4px solid #00C5CC;
-            }
-
-            input[type=radio] {
-                display: none;
-               /*position: absolute;
-               top: 0;
-               left: -9999px;*/
-            }
-
-            /* selector for month selection */
-         /*   <% for(var k=0; k<months.length; k++) {
-                var context = months[k];
-                %>
-                #<%= context.monthId %>:checked ~ .calendars .calendars-inner {
-                    margin-left: -<%= k * 320 %>px;
-                }
-
-                #<%= context.monthId %>:checked ~ .calendars .calendars-controls label:nth-child(<%= k+1 %>) {
-                    background-color: #00C5CC;
-                }
-            <% } %>
-*/
-            /* selector for the events */
-            <% for(var k=0; k<events.length; k++) {
-                var event = events[k]; %>
-
-                #<%= event.id %>:checked ~ .calendars .calendar-detail .<%= event.id %> {
-                    display: block;
-                }
-
-                #<%= event.id %>:checked ~ .calendars .calendar-nojs label[for="<%= event.id %>"] {
-                    background-color: red;
-                    border-color: red;
-                }
-            <% } %>
         </style>
 	</head>
 	<body>
@@ -258,9 +124,8 @@
 												<table align="center" border="0" cellpadding="0" cellspacing="0" width="70%" id="headerContainer">
 													<tr>
 														<td valign="top" class="headerContent">
-															<h1>A VOS AGENDAS</h1>
-															<p>Prévision des plongées et autres évèments du Plongée Pays d'Aix</p>
-                                                            <p>N'oubliez pas que vous etes dans un club bénévole, nous avons besoin de la participation de tous.</p>
+															<h1>WORKSPACE ELEGANCE</h1>
+															<p>Transform your office into a sanctuary with our line of sustainably-sourced wood accessories.</p>
 														</td>
 													</tr>
 												</table>
@@ -336,23 +201,12 @@
 						<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" id="emailColumns">
 							<tr>
 								<td align="center" valign="top">
-
-     <% for(var k=0; k<events.length; k++) {
-        var event = events[k];
-
-        if (k===0) { %>
-            <input  type="radio" name="radio-event" id="<%= event.id %>">
-        <% } else { %>
-            <input checked type="radio" name="radio-event" id="<%= event.id %>">
-        <% } %>
-    <% } %>
-
 									<!--[if gte mso 9]>
 									<table align="center" border="0" cellspacing="0" cellpadding="0" width="640">
 									<tr>
 									<td align="center" valign="top">
 									<![endif]-->
-									<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="calendars flexibleContainer">
+									<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="flexibleContainer">
 										<tr>
 											<td valign="top" class="columnIntro">
 												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi scelerisque eleifend mauris, eu viverra dui facilisis et. Sed ligula odio, tincidunt id:</p>
@@ -368,74 +222,17 @@
 												<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" id="leftColumn">
 													<tr>
 														<td align="center" valign="top" class="imageContainer">
-			<% var context = months[3]; %>
-            <h2><%= context.monthTitle %></h2>
+															<a href="http://www.mailchimp.com" target="_blank"><img src="http://i.imgur.com/JzGcwnT.png" height="180" width="290" class="flexibleImage"></a>
 														</td>
 													</tr>
 													<tr>
 														<td valign="top" class="columnContent">
-
-            <table align="center" cellspacing="0" cellpadding="0" width="100%" class="calendar-nojs">
-                <thead>
-                    <tr>
-                        <% for(var i=context.firstDayOfWeek; i<(context.weekdays.length+context.firstDayOfWeek); i++) { %>
-                            <td><%= context.weekdays[i % 7] %></td>
-                        <% } %>
-                    </tr>
-                </thead>
-                <tbody>
-                <% for(var i=0; i<context.nWeeks; i++) { %>
-                    <tr>
-                        <% for(var j=0; j<7; j++) {
-                            var curDate = context.range.start;
-                            var curMonth = curDate.month();
-
-                            if (curMonth === context.month-1) { %>
-                                <td class="previous-month"><%= curDate.date() %></td>
-                            <% } else if (curMonth === context.month+1) { %>
-                                <td class="next-month"><%= curDate.date() %></td>
-                            <% } else {
-
-                                const selectedEvents = events.filter(function(event) {
-                                    if (!event.date.diff(curDate, 'minutes')) {
-                                        return true;
-                                    }
-                                });
-
-                                if (selectedEvents.length > 1) {
-                                    /* TODO: we need to group all events for a day */
-                                    /* so the selector shoud be a day selector */
-                                    /* and not an event selector */
-                                    console.log(selectedEvent);
-                                }
-
-                                if (selectedEvents.length) { %>
-                                    <td><label class="eventButton" for="<%= selectedEvents[0].id %>"><%= curDate.date() %></label></td>
-                                <% } else { %>
-                                    <td><label><%= curDate.date() %></td>
-                                <% }
-                            } %>
-                            <% context.range.start.add(1, 'days');
-                        } %>
-                    </tr>
-                <% } %>
-                </tbody>
-            </table>
-
+															<p>Agata Leather Desk Pad<br>$129.99</p>
 														</td>
 													</tr>
 													<tr>
-														<td align="center" valign="top" class="columnContent">
-            <div class='calendar-detail'>
-                 <% for(var k=0; k<1; k++) { /*events.length;*/
-                    var event = events[k]; %>
-                    <div class="<%= event.id %>">
-                        <div class="event__name"><h2><%= event.name %></h2></div>
-                        <div class="event_description"><%= event.description %></div>
-                        <a href="http://www.mailchimp.com" target="_blank" class="emailButton">Je m'inscris</a>
-                    </div>
-                <% } %>
-            </div>
+														<td align="center" valign="top" class="buttonContainer">
+															<a href="http://www.mailchimp.com" target="_blank" class="emailButton">ADD TO CART</a>
 														</td>
 													</tr>
 												</table>
@@ -445,74 +242,18 @@
 												<![endif]-->
 												<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" id="rightColumn">
 													<tr>
-														<td align="center" valign="top" class="columnContent">
-            <% var context = months[4]; %>
-            <h2><%= context.monthTitle %></h2>
+														<td align="center" valign="top" class="imageContainer">
+															<a href="http://www.mailchimp.com" target="_blank"><img src="http://i.imgur.com/oNKo1OY.png" height="180" width="290" class="flexibleImage"></a>
 														</td>
 													</tr>
 													<tr>
 														<td valign="top" class="columnContent">
-			 <table align="center" cellspacing="0" cellpadding="0" width="100%" class="calendar-nojs">
-                <thead>
-                    <tr>
-                        <% for(var i=context.firstDayOfWeek; i<(context.weekdays.length+context.firstDayOfWeek); i++) { %>
-                            <td><%= context.weekdays[i % 7] %></td>
-                        <% } %>
-                    </tr>
-                </thead>
-                <tbody>
-                <% for(var i=0; i<context.nWeeks; i++) { %>
-                    <tr>
-                        <% for(var j=0; j<7; j++) {
-                            var curDate = context.range.start;
-                            var curMonth = curDate.month();
-
-                            if (curMonth === context.month-1) { %>
-                                <td class="previous-month"><%= curDate.date() %></td>
-                            <% } else if (curMonth === context.month+1) { %>
-                                <td class="next-month"><%= curDate.date() %></td>
-                            <% } else {
-
-                                const selectedEvents = events.filter(function(event) {
-                                    if (!event.date.diff(curDate, 'minutes')) {
-                                        return true;
-                                    }
-                                });
-
-                                if (selectedEvents.length > 1) {
-                                    /* TODO: we need to group all events for a day */
-                                    /* so the selector shoud be a day selector */
-                                    /* and not an event selector */
-                                    console.log(selectedEvent);
-                                }
-
-                                if (selectedEvents.length) { %>
-                                    <td><label class="eventButton" for="<%= selectedEvents[0].id %>"><%= curDate.date() %></label></td>
-                                <% } else { %>
-                                    <td><label><%= curDate.date() %></td>
-                                <% }
-                            } %>
-                            <% context.range.start.add(1, 'days');
-                        } %>
-                    </tr>
-                <% } %>
-                </tbody>
-            </table>
-
+															<p>Carina Reclaimed Oak Table<br>$2199.99</p>
 														</td>
 													</tr>
 													<tr>
-														<td align="center" valign="top" class="columnContent">
-            <div class='calendar-detail'>
-                 <% for(var k=1; k<events.length; k++) { /*;*/
-                    var event = events[k]; %>
-                    <div class="<%= event.id %>">
-                        <div class="event__name"><h2><%= event.name %></h2></div>
-                        <div class="event_description"><%= event.description %></div>
-                        <a href="http://www.mailchimp.com" target="_blank" class="emailButton">Je m'inscris</a>
-                    </div>
-                <% } %>
-            </div>
+														<td align="center" valign="top" class="buttonContainer">
+															<a href="http://www.mailchimp.com" target="_blank" class="emailButton">ADD TO CART</a>
 														</td>
 													</tr>
 												</table>

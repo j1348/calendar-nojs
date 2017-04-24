@@ -1,17 +1,14 @@
 var nodemailer = require('nodemailer'),
-    FROM = process.env.MAIL_FROM,
-    options;
-
-options = {
-    host: process.env.MAIL_HOST,
-    port: 587,
-    secure: false,
-    auth: {
-        user: FROM,
-        pass: process.env.MAIL_PASSWORD
-    }
-};
-
+    FROM = process.env.MAIL_USER,
+    options = {
+        host: process.env.MAIL_HOST,
+        port: 587,
+        secure: false,
+        auth: {
+            user: FROM,
+            pass: process.env.MAIL_PASSWORD
+        }
+    };
 
 var transport = nodemailer.createTransport(options);
 

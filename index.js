@@ -1,7 +1,7 @@
 require('dotenv').config();
 const ejs = require('ejs');
 const fs = require('fs');
-const templateString = fs.readFileSync('./templates/main.ejs', 'utf-8');
+const templateString = fs.readFileSync('./templates/smash.ejs', 'utf-8');
 const minify = require('html-minifier').minify;
 const send = require('./mail').send;
 
@@ -9,10 +9,10 @@ const data = require('./fake-data').default;
 const html = ejs.render(templateString, data);
 const outputHTML = minify(html, { debug: true });
 
-send({
-	subject: 'mail testing 2',
-    text: "",
-    html: outputHTML,
-});
+// send({
+// 	subject: 'mail testing 2',
+//     text: "",
+//     html: outputHTML,
+// });
 
 fs.writeFileSync("./output.html", outputHTML, 'utf8');
