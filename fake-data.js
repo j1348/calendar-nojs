@@ -11,20 +11,26 @@ for(var y=2017; y<=2017; y++) {
 
 exports.default = {
     events: [{
-            name: 'event 1',
-            description: 'This is a damn good event',
+            name: 'PPPPPPP du Bord - XXX du Petit NNN',
+            description: 'RDV à 8h',
             date: moment('2017/04/08', 'YYYY/MM/DD'),
             type: 'category1',
             id: 'event1',
         }, {
-            name: 'event 2',
-            description: 'Testing the display event',
+            name: 'PPPPPPP du Bord - AAAAA',
+            description: 'RDV à 8h',
+            date: moment('2017/04/23', 'YYYY/MM/DD'),
+            type: 'category1',
+            id: 'event11',
+        }, {
+            name: 'PPPPPPP technique PN2',
+            description: 'RDV à 8:15 - départ bateau à 8:30',
             date: moment('2017/05/15', 'YYYY/MM/DD'),
             type: 'category2',
             id: 'event2',
         }, {
-            name: 'XXXXXXX dkzoekdokzeod',
-            description: "TtTTTTTt kc osdkocosdkcok sodco ",
+            name: 'PPPPPPP exploration N1',
+            description: "RDV à 8:45 - départ bateau à 9:00",
             date: moment('2017/05/16', 'YYYY/MM/DD'),
             type: 'category1',
             id: 'event3',

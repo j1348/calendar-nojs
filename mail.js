@@ -18,7 +18,6 @@ exports.send = function(params) {
     params.to = 'jfroffice@gmail.com';
 
     transport.sendMail(params, function(err, resp) {
-        cb && cb(err, resp);
         if (err) {
             console.log(err);
         } else {

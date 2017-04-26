@@ -13,7 +13,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
-		<title>Smashing Book 5: The Email!</title>
+		<title>A vos agendas!</title>
         <style type="text/css">
 			/*////// RESET STYLES //////*/
 			p{margin:1em 0;}
@@ -53,6 +53,7 @@
 			body, #bodyTable{background-color:#181818;}
 			h1{color:#FFFFFF !important; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:40px; font-weight:200; line-height:44px; margin-top:0; margin-right:0; margin-bottom:20px; margin-left:0; padding:0; text-align:center; text-shadow:0 2px 0 rgba(0, 0, 0, 0.25);}
 			h2{color:#181818 !important; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:30px; font-weight:200; line-height:34px; margin-top:0; margin-right:0; margin-bottom:20px; margin-left:0; padding:0; text-align:center;}
+            h3{color:#181818 !important; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:14px; font-weight:200; line-height:34px; margin-top:0; margin-right:0; margin-bottom:20px; margin-left:0; padding:0; text-align:center;}
 			#emailHeader{background-color:#494643; background-image:url(http://i.imgur.com/TwCooBr.png); background-position:center top; background-repeat:no-repeat; background-size:cover;}
 			.headerContent p{color:#FFFFFF !important; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:18px; font-weight:200; line-height:24px; margin-top:0; margin-right:0; margin-bottom:10px; margin-left:0; text-align:center; text-shadow:0 2px 0 rgba(0, 0, 0, 0.25);}
 
@@ -71,7 +72,7 @@
 			.footerContent a{text-decoration:underline;}
 
 			@media screen{
-				h1, h2, .headerContent p, .emailButton, .footerContent p{font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;}
+				h1, h2, h3, .headerContent p, .emailButton, .footerContent p{font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;}
 			}
 
 			@media screen and (min-width:640px){
@@ -100,7 +101,6 @@
 			}
 
             /*///// CUSTOM ////////*/
-
              .eventButton{background-color:#00C5CC; border-top:5px solid #00C5CC; border-right:10px solid #00C5CC; border-bottom:5px solid #00C5CC; border-left:10px solid #00C5CC; border-radius:2px; color:#FFFFFF; display:inline-block; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:16px; font-weight:400; line-height:18px; text-align:center; text-decoration:none;}
 
             .calendars {
@@ -112,66 +112,35 @@
                 transition: all 400ms;
             }
 
-            .calendars-controls {
-                width: 100%;
-                margin: 0;
-                padding: 0;
-            }
-
-            .calendars-controls .inner {
-                margin: 1em auto;
-                width: 550px;
-            }
-
-            .calendars-controls label {
-                cursor: pointer;
-                border-radius: 50%;
-                display: inline-block;
-                width: 44px;
-                height: 44px;
-                background: #bbb;
-            }
-
-            .calendars-controls label:hover {
-                background: #ccc;
-                border-color: #777 !important;
-            }
-
-            .calendars-controls label:last-child {
-                margin-right: 0;
-            }
-
-
             .calendar-detail {
                 margin-top: 20px;
             }
 
-
             .calendar-detail > div {
                 display: none;
-                padding: 0.1rem 2rem 2rem 2rem;
-                margin: 0 auto;
                 background-color: #FAFAFA;
             }
 
+
+
             .calendar-nojs {
-                /*display: inline-block;*/
                 font-family: sans-serif;
-                /*border-right: 1px solid #AAA;*/
             }
 
             .calendar-nojs thead {
                 line-height: 1.6rem;
             }
 
+            .calendar-nojs tbody tr.odd {
+                background-color: #e7feff;
+            }
+
             .calendar-nojs thead td {
                 font-weight: bold;
-                text-align: right;
-                padding-right: 1rem;
+                text-align: center;
             }
 
             .calendar-nojs tbody td {
-                border-radius: 50%;
                 text-align: center;
                 vertical-align: middle;
             }
@@ -184,41 +153,23 @@
 
             .calendar-nojs tbody td.previous-month,
             .calendar-nojs tbody td.next-month {
-                color: #AAA;
+                color: #CCC;
             }
 
             .calendar-nojs h2 {
                 text-align: center;
             }
 
-            .calendar-nojs .category1 {
-                border-bottom: 4px solid red;
+            @media screen and (min-width:480px){
+                .calendar-nojs { padding-left: 10px !important; padding-right: 10px !important; }
             }
 
-            .calendar-nojs .category2  {
-                border-bottom: 4px solid #00C5CC;
-            }
 
-            input[type=radio] {
+            input[type=radio],
+            input[type=checkbox] {
                 display: none;
-               /*position: absolute;
-               top: 0;
-               left: -9999px;*/
             }
 
-            /* selector for month selection */
-         /*   <% for(var k=0; k<months.length; k++) {
-                var context = months[k];
-                %>
-                #<%= context.monthId %>:checked ~ .calendars .calendars-inner {
-                    margin-left: -<%= k * 320 %>px;
-                }
-
-                #<%= context.monthId %>:checked ~ .calendars .calendars-controls label:nth-child(<%= k+1 %>) {
-                    background-color: #00C5CC;
-                }
-            <% } %>
-*/
             /* selector for the events */
             <% for(var k=0; k<events.length; k++) {
                 var event = events[k]; %>
@@ -228,8 +179,8 @@
                 }
 
                 #<%= event.id %>:checked ~ .calendars .calendar-nojs label[for="<%= event.id %>"] {
-                    background-color: red;
-                    border-color: red;
+                    background-color: orange;
+                    border-color: orange;
                 }
             <% } %>
         </style>
@@ -341,9 +292,9 @@
         var event = events[k];
 
         if (k===0) { %>
-            <input  type="radio" name="radio-event" id="<%= event.id %>">
+            <input checked type="radio" name="radio-<%= event.date.month() %>" id="<%= event.id %>">
         <% } else { %>
-            <input checked type="radio" name="radio-event" id="<%= event.id %>">
+            <input type="radio" name="radio-<%= event.date.month() %>" id="<%= event.id %>">
         <% } %>
     <% } %>
 
@@ -367,33 +318,37 @@
 												<![endif]-->
 												<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" id="leftColumn">
 													<tr>
-														<td align="center" valign="top" class="imageContainer">
+														<td align="center" valign="top">
 			<% var context = months[3]; %>
             <h2><%= context.monthTitle %></h2>
 														</td>
 													</tr>
 													<tr>
-														<td valign="top" class="columnContent">
+														<td valign="top" style="padding: 0 10px">
 
             <table align="center" cellspacing="0" cellpadding="0" width="100%" class="calendar-nojs">
                 <thead>
                     <tr>
                         <% for(var i=context.firstDayOfWeek; i<(context.weekdays.length+context.firstDayOfWeek); i++) { %>
-                            <td><%= context.weekdays[i % 7] %></td>
+                            <td style="padding-bottom: 10px;"><%= context.weekdays[i % 7] %></td>
                         <% } %>
                     </tr>
                 </thead>
                 <tbody>
-                <% for(var i=0; i<context.nWeeks; i++) { %>
-                    <tr>
+                <% for(var i=0; i<context.nWeeks; i++) {
+                    if (Math.round(i/2)*2===i) { %>
+                        <tr class="odd">
+                    <% } else { %>
+                        <tr>
+                    <% } %>
                         <% for(var j=0; j<7; j++) {
                             var curDate = context.range.start;
                             var curMonth = curDate.month();
 
                             if (curMonth === context.month-1) { %>
-                                <td class="previous-month"><%= curDate.date() %></td>
+                                <td style="padding: 6px 0;" class="previous-month"><%= curDate.date() %></td>
                             <% } else if (curMonth === context.month+1) { %>
-                                <td class="next-month"><%= curDate.date() %></td>
+                                <td style="padding: 6px 0;" class="next-month"><%= curDate.date() %></td>
                             <% } else {
 
                                 const selectedEvents = events.filter(function(event) {
@@ -410,9 +365,9 @@
                                 }
 
                                 if (selectedEvents.length) { %>
-                                    <td><label class="eventButton" for="<%= selectedEvents[0].id %>"><%= curDate.date() %></label></td>
+                                    <td style="padding: 6px 0;"><label class="eventButton" for="<%= selectedEvents[0].id %>"><%= curDate.date() %></label></td>
                                 <% } else { %>
-                                    <td><label><%= curDate.date() %></td>
+                                    <td style="padding: 6px 0;"><label><%= curDate.date() %></td>
                                 <% }
                             } %>
                             <% context.range.start.add(1, 'days');
@@ -426,16 +381,23 @@
 													</tr>
 													<tr>
 														<td align="center" valign="top" class="columnContent">
-            <div class='calendar-detail'>
-                 <% for(var k=0; k<1; k++) { /*events.length;*/
-                    var event = events[k]; %>
-                    <div class="<%= event.id %>">
-                        <div class="event__name"><h2><%= event.name %></h2></div>
-                        <div class="event_description"><%= event.description %></div>
-                        <a href="http://www.mailchimp.com" target="_blank" class="emailButton">Je m'inscris</a>
-                    </div>
-                <% } %>
-            </div>
+
+                <table align="center" cellspacing="0" cellpadding="0" width="100%">
+                    <tr>
+                        <td class='calendar-detail'>
+                        <!-- Only loop on current month events -->
+                         <% for(var k=0; k<2; k++) {
+                            var event = events[k]; %>
+                            <div class="<%= event.id %>">
+                                <h3><%= event.name %></h3>
+                                <p><%= event.description %></p>
+                                <br>
+                                <a href="http://www.mailchimp.com" target="_blank" class="emailButton">Je m'inscris</a>
+                            </div>
+                        <% } %>
+                        </td>
+                    </tr>
+                </table>
 														</td>
 													</tr>
 												</table>
@@ -445,32 +407,37 @@
 												<![endif]-->
 												<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" id="rightColumn">
 													<tr>
-														<td align="center" valign="top" class="columnContent">
+														<td align="center" valign="top">
             <% var context = months[4]; %>
             <h2><%= context.monthTitle %></h2>
 														</td>
 													</tr>
 													<tr>
-														<td valign="top" class="columnContent">
+														<td valign="top" style="padding: 0 10px">
 			 <table align="center" cellspacing="0" cellpadding="0" width="100%" class="calendar-nojs">
                 <thead>
                     <tr>
                         <% for(var i=context.firstDayOfWeek; i<(context.weekdays.length+context.firstDayOfWeek); i++) { %>
-                            <td><%= context.weekdays[i % 7] %></td>
+                            <td style="padding-bottom: 10px;"><%= context.weekdays[i % 7] %></td>
                         <% } %>
                     </tr>
                 </thead>
                 <tbody>
-                <% for(var i=0; i<context.nWeeks; i++) { %>
-                    <tr>
+                <% for(var i=0; i<context.nWeeks; i++) {
+
+                    if (Math.round(i/2)*2===i) { %>
+<tr class="odd">
+                    <% } else { %>
+<tr>
+                    <% } %>
                         <% for(var j=0; j<7; j++) {
                             var curDate = context.range.start;
                             var curMonth = curDate.month();
 
                             if (curMonth === context.month-1) { %>
-                                <td class="previous-month"><%= curDate.date() %></td>
+                                <td style="padding: 6px 0;" class="previous-month"><%= curDate.date() %></td>
                             <% } else if (curMonth === context.month+1) { %>
-                                <td class="next-month"><%= curDate.date() %></td>
+                                <td style="padding: 6px 0;" class="next-month"><%= curDate.date() %></td>
                             <% } else {
 
                                 const selectedEvents = events.filter(function(event) {
@@ -487,9 +454,9 @@
                                 }
 
                                 if (selectedEvents.length) { %>
-                                    <td><label class="eventButton" for="<%= selectedEvents[0].id %>"><%= curDate.date() %></label></td>
+                                    <td style="padding: 6px 0;"><label class="eventButton" for="<%= selectedEvents[0].id %>"><%= curDate.date() %></label></td>
                                 <% } else { %>
-                                    <td><label><%= curDate.date() %></td>
+                                    <td style="padding: 6px 0;"><label><%= curDate.date() %></td>
                                 <% }
                             } %>
                             <% context.range.start.add(1, 'days');
@@ -504,11 +471,12 @@
 													<tr>
 														<td align="center" valign="top" class="columnContent">
             <div class='calendar-detail'>
-                 <% for(var k=1; k<events.length; k++) { /*;*/
+                 <% for(var k=2; k<events.length; k++) {
                     var event = events[k]; %>
                     <div class="<%= event.id %>">
-                        <div class="event__name"><h2><%= event.name %></h2></div>
-                        <div class="event_description"><%= event.description %></div>
+                        <h3><%= event.name %></h3>
+                        <p><%= event.description %></p>
+                        <br>
                         <a href="http://www.mailchimp.com" target="_blank" class="emailButton">Je m'inscris</a>
                     </div>
                 <% } %>
